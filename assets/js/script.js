@@ -13,7 +13,7 @@ searchForm.addEventListener("submit", function(event) {
 
 // Function to fetch weather data for a given city
 function getWeatherForecast(city) {
-  const apiKey = "{b21bfc63c29a44e663efc3901ae33f6a}";
+  const apiKey = "{APIKEY}";
   const baseUrl = "http://api.openweathermap.org/data/2.5/forecast";
 
   // Make a request to the API with the city name
