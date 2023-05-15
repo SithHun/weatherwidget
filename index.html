@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Dashboard</title>
+  <style>
+    /* Add your custom CSS styles here */
+  </style>
+  <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
+</head>
+<body>
+  <h1>Weather Dashboard</h1>
+
+  <!-- Search Form -->
+  <form id="searchForm">
+    <input type="text" id="cityInput" placeholder="Enter a city">
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Weather Display -->
+  <div id="weatherDisplay">
+    <!-- Current Weather -->
+    <div id="currentWeather">
+      <h2>Current Weather</h2>
+      <p id="cityName"></p>
+      <p id="date"></p>
+      <p id="weatherIcon"></p>
+      <p id="temperature"></p>
+      <p id="humidity"></p>
+      <p id="windSpeed"></p>
+    </div>
+
+    <!-- Forecast -->
+    <div id="forecast">
+      <h2>5-Day Forecast</h2>
+      <ul id="forecastList"></ul>
+    </div>
+  </div>
+
+  <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+  </script>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
