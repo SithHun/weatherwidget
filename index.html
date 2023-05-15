@@ -5,7 +5,7 @@
   <style>
     /* Add your custom CSS styles here */
   </style>
-  <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" ></a>
+  <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original"></a>
 </head>
 <body>
   <h1>Weather Dashboard</h1>
@@ -15,6 +15,10 @@
     <input type="text" id="cityInput" placeholder="Enter a city">
     <button type="submit">Search</button>
   </form>
+
+  <!-- Search History -->
+  <h2>Search History</h2>
+  <ul id="searchHistory"></ul>
 
   <!-- Weather Display -->
   <div id="weatherDisplay">
@@ -37,7 +41,7 @@
   </div>
 
   <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
   </script>
   <script src="./assets/js/script.js"></script>
 </body>
