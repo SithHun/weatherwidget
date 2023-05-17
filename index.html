@@ -3,6 +3,7 @@
 <head>
   <title>Weather Dashboard</title>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
 <body>
   <h1>Weather Dashboard</h1>
 
@@ -16,9 +17,9 @@
       </form>
 
       <!-- Search History -->
-      <div id="searchHistory" class="search-history">
-        <h2>Search History</h2>
-        <ul id="historyList"></ul>
+      <div id="searchHistory" class="search-history card">
+        <div class="card-header">Search History</div>
+        <ul id="historyList" class="list-group list-group-flush"></ul>
       </div>
     </div>
 
@@ -26,19 +27,21 @@
     <div class="right-column">
       <!-- Current Weather -->
       <div id="currentWeather" class="card">
-        <h2>Current Weather</h2>
-        <p id="cityName"></p>
-        <p id="date"></p>
-        <p id="weatherIcon"></p>
-        <p id="temperature"></p>
-        <p id="humidity"></p>
-        <p id="windSpeed"></p>
+        <div class="card-header">Current Weather</div>
+        <div class="card-body">
+          <p id="cityName"></p>
+          <p id="date"></p>
+          <p id="weatherIcon"></p>
+          <p id="temperature"></p>
+          <p id="humidity"></p>
+          <p id="windSpeed"></p>
+        </div>
       </div>
 
       <!-- Forecast -->
       <div id="forecast" class="card">
-        <h2>5-Day Forecast</h2>
-        <ul id="forecastList"></ul>
+        <div class="card-header">5-Day Forecast</div>
+        <ul id="forecastList" class="list-group list-group-flush"></ul>
       </div>
     </div>
   </div>
