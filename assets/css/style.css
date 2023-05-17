@@ -2,15 +2,27 @@
 
 .container {
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
   
   .left-column {
-    flex-basis: 300px;
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .search-history {
+    text-align: left;
   }
   
   .right-column {
-    flex-grow: 1;
-    margin-left: 20px;
+    flex: 1;
+    text-align: left;
   }
   
   .card {
@@ -29,72 +41,75 @@
     margin-bottom: 10px;
   }
   
-
-    /* Overall layout */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f2f2f2;
-    }
-
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-
-    /* Search Form */
-    #searchForm {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    #cityInput {
-      padding: 10px;
-      font-size: 16px;
-    }
-
-    button[type="submit"] {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-
-    /* Search History */
-    h2 {
-      color: #333;
-    }
-
-    ul#searchHistory {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul#searchHistory li {
-      margin-bottom: 10px;
-    }
-
-    /* Weather Display */
-    #weatherDisplay {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-    }
-
-    /* Current Weather */
-    #currentWeather {
-      margin-bottom: 20px;
-    }
-
-    #currentWeather h2 {
-      color: #333;
-    }
-
-    /* Forecast */
-#forecast {
+  /* Overall layout */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Search Form */
+  #searchForm {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #cityInput {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Search History */
+  .search-history h2 {
+    color: #333;
+  }
+  
+  ul#historyList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul#historyList li {
+    margin-bottom: 10px;
+  }
+  
+  /* Weather Display */
+  #weatherDisplay {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Current Weather */
+  #currentWeather {
+    margin-bottom: 20px;
+  }
+  
+  #currentWeather h2 {
+    color: #333;
+  }
+  
+  /* Forecast */
+  #forecast {
     margin-bottom: 20px;
   }
   
@@ -119,5 +134,4 @@
     border-radius: 5px;
     text-align: center;
     margin-right: 10px;
-  }
-  
+  }  
