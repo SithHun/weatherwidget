@@ -1,5 +1,35 @@
 /* Custom CSS styles */
 
+.container {
+    display: flex;
+  }
+  
+  .left-column {
+    flex-basis: 300px;
+  }
+  
+  .right-column {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  
+  .card {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .search-history ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .search-history ul li {
+    margin-bottom: 10px;
+  }
+  
+
     /* Overall layout */
     body {
       font-family: Arial, sans-serif;

@@ -3,24 +3,29 @@
 <head>
   <title>Weather Dashboard</title>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  </head>
-  <body>
-    <h1>Weather Dashboard</h1>
-  
-    <!-- Search Form -->
-    <form id="searchForm">
-      <input type="text" id="cityInput" placeholder="Enter a city">
-      <button type="submit">Search</button>
-    </form>
-  
-    <!-- Search History -->
-    <h2>Search History</h2>
-    <ul id="searchHistory"></ul>
-  
-    <!-- Weather Display -->
-    <div id="weatherDisplay">
+<body>
+  <h1>Weather Dashboard</h1>
+
+  <div class="container">
+    <!-- Left Side Column -->
+    <div class="left-column">
+      <!-- Search Form -->
+      <form id="searchForm">
+        <input type="text" id="cityInput" placeholder="Enter a city">
+        <button type="submit">Search</button>
+      </form>
+
+      <!-- Search History -->
+      <div id="searchHistory" class="search-history">
+        <h2>Search History</h2>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+
+    <!-- Right Side Column -->
+    <div class="right-column">
       <!-- Current Weather -->
-      <div id="currentWeather">
+      <div id="currentWeather" class="card">
         <h2>Current Weather</h2>
         <p id="cityName"></p>
         <p id="date"></p>
@@ -29,13 +34,14 @@
         <p id="humidity"></p>
         <p id="windSpeed"></p>
       </div>
-  
+
       <!-- Forecast -->
-      <div id="forecast">
+      <div id="forecast" class="card">
         <h2>5-Day Forecast</h2>
         <ul id="forecastList"></ul>
       </div>
     </div>
+  </div>
 
   <script src="./assets/js/script.js"></script>
 </body>
