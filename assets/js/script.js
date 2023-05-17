@@ -40,14 +40,17 @@ function saveCityToLocalStorage(city) {
   let searchHistory = localStorage.getItem("searchHistory");
   searchHistory = searchHistory ? JSON.parse(searchHistory) : [];
 
-  // Add the new city to the search history
-  searchHistory.push(city);
+  // Check if the city is already present in the search history
+  if (!searchHistory.includes(city)) {
+    // Add the new city to the search history
+    searchHistory.push(city);
 
-  // Store the updated search history in local storage
-  localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    // Store the updated search history in local storage
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 
-  // Update the search history on the web page
-  updateSearchHistory();
+    // Update the search history on the web page
+    updateSearchHistory();
+  }
 }
 
 // Function to update the current weather information
@@ -82,55 +85,57 @@ function updateForecast(data) {
   forecastList.innerHTML = ""; // Clear previous forecast data
 
   // Iterate over the forecast data for the next 5 days
-  for (let i = 1; i < 6; i++) {
+  for (let i = 0; i < 5; i++) {
     // Extract the necessary data from the API response
-    const date = new Date(data.list[i].dt * 1000); // Convert timestamp to date
-    const iconCode = data.list[i].weather[0].icon;
-    const temp = data.list[i].main.temp;
-    const wind = data.list[i].wind.speed;
-    const humid = data.list[i].main.humidity;
-
-    // Create an HTML list item for each forecast entry
-    const listItem = document.createElement("li");
-    listItem.innerHTML = `
-        <p>Date: ${date.toDateString()}</p>
-        <p>Weather: <img src="http://openweathermap.org/img/w/${iconCode}.png" alt="Weather Icon"></p>
-        <p>Temperature: ${temp}°C</p>
-        <p>Wind Speed: ${wind} km/h</p>
-        <p>Humidity: ${humid}%</p>
-      `;
-    forecastList.appendChild(listItem);
-  }
-}
-
-// Function to retrieve the search history from local storage
-function getSearchHistoryFromLocalStorage() {
-  // Retrieve the search history from local storage
-  const searchHistory = localStorage.getItem("searchHistory");
-  return searchHistory ? JSON.parse(searchHistory) : [];
-}
-
-// Function to update the search history on the web page
-function updateSearchHistory() {
-  const searchHistory = getSearchHistoryFromLocalStorage();
-  const searchHistoryElement = document.getElementById("searchHistory");
-
-  // Clear previous search history
-  searchHistoryElement.innerHTML = "";
-
-  // Add each city to the search history element
-  searchHistory.forEach(city => {
-    const cityLink = document.createElement("a");
-    cityLink.textContent = city;
-    cityLink.href = "#"; // You can specify the link behavior as needed
-    cityLink.addEventListener("click", function() {
-      getWeatherForecast(city);
-    });
-
-    searchHistoryElement.appendChild(cityLink);
-    searchHistoryElement.appendChild(document.createElement("br"));
-  });
-}
-
-// Load the search history on page load
-updateSearchHistory();
+    const date = new Date(data.list[i * 8].dt * 1000);
+    // Convert timestamp to date
+        const iconCode = data.list[i * 8].weather[0].icon;
+        const temp = data.list[i * 8].main.temp;
+        const wind = data.list[i * 8].wind.speed;
+        const humid = data.list[i * 8].main.humidity;
+    
+        // Create an HTML list item for each forecast entry
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `
+          <p>Date: ${date.toDateString()}</p>
+          <p>Weather: <img src="http://openweathermap.org/img/w/${iconCode}.png" alt="Weather Icon"></p>
+          <p>Temperature: ${temp}°C</p>
+          <p>Wind Speed: ${wind} km/h</p>
+          <p>Humidity: ${humid}%</p>
+        `;
+        forecastList.appendChild(listItem);
+      }
+    }
+    
+    // Function to retrieve the search history from local storage
+    function getSearchHistoryFromLocalStorage() {
+      // Retrieve the search history from local storage
+      const searchHistory = localStorage.getItem("searchHistory");
+      return searchHistory ? JSON.parse(searchHistory) : [];
+    }
+    
+    // Function to update the search history on the web page
+    function updateSearchHistory() {
+      const searchHistory = getSearchHistoryFromLocalStorage();
+      const searchHistoryElement = document.getElementById("searchHistory");
+    
+      // Clear previous search history
+      searchHistoryElement.innerHTML = "";
+    
+      // Add each city to the search history element
+      searchHistory.forEach(city => {
+        const cityLink = document.createElement("a");
+        cityLink.textContent = city;
+        cityLink.href = "#"; // You can specify the link behavior as needed
+        cityLink.addEventListener("click", function() {
+          getWeatherForecast(city);
+        });
+    
+        searchHistoryElement.appendChild(cityLink);
+        searchHistoryElement.appendChild(document.createElement("br"));
+      });
+    }
+    
+    // Load the search history on page load
+    updateSearchHistory();
+  

@@ -1,0 +1,93 @@
+/* Custom CSS styles */
+
+    /* Overall layout */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    /* Search Form */
+    #searchForm {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #cityInput {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Search History */
+    h2 {
+      color: #333;
+    }
+
+    ul#searchHistory {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul#searchHistory li {
+      margin-bottom: 10px;
+    }
+
+    /* Weather Display */
+    #weatherDisplay {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    /* Current Weather */
+    #currentWeather {
+      margin-bottom: 20px;
+    }
+
+    #currentWeather h2 {
+      color: #333;
+    }
+
+    /* Forecast */
+#forecast {
+    margin-bottom: 20px;
+  }
+  
+  #forecast h2 {
+    color: #333;
+  }
+  
+  ul#forecastList {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    flex-wrap: nowrap; /* Prevent cards from wrapping to the next line */
+  }
+  
+  ul#forecastList li {
+    flex: 0 0 auto; /* Disable flex shrinking */
+    width: calc(100% / 5); /* Set the width to 20% to display 5 cards per row */
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
